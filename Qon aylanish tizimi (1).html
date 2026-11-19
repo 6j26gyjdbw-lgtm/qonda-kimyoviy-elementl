@@ -1,0 +1,431 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qon aylanish tizimi 🩸</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#fff0f0,#ffe1e8);
+color:#333;
+}
+header{
+background:linear-gradient(120deg,#720000,#ef3030);
+color:white;text-align:center;padding:35px 15px;
+}
+header h1{font-size:40px}
+header p{font-size:19px}
+.container{max-width:1100px;margin:auto;padding:20px}
+.welcome,.content,.fact{
+background:white;padding:25px;border-radius:18px;
+margin:20px 0;box-shadow:0 5px 15px #0002;
+}
+.welcome{text-align:center}
+h2{color:#b00025}
+.buttons{
+display:flex;flex-wrap:wrap;justify-content:center;gap:12px;
+}
+button{
+background:#b90025;color:white;border:0;
+padding:15px 20px;border-radius:12px;
+font-size:16px;cursor:pointer;transition:.3s;
+}
+button:hover{background:#ff405b;transform:translateY(-4px)}
+#malumot{display:none;animation:open .5s}
+@keyframes open{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
+}
+#matn{line-height:1.9;font-size:17px}
+#matn h3{color:#b00025;margin-top:25px}
+#matn p{margin:12px 0}
+.info{
+background:#fff0f2;padding:17px;
+border-left:5px solid #e00035;
+border-radius:10px;margin:17px 0;
+}
+.emoji{text-align:center;font-size:45px}
+.facts{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+}
+.fact{text-align:center}
+footer{
+background:#780000;color:white;text-align:center;
+padding:25px;margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div style="font-size:55px">🩸 ❤️ 🫀</div>
+<h1>QON AYLANISH TIZIMI</h1>
+<p>Inson organizmining eng muhim tizimlaridan biri!</p>
+</header>
+
+<div class="container">
+
+<div class="welcome">
+<h2>👋 Xush kelibsiz!</h2>
+<p>Ushbu sayt orqali inson qon aylanish tizimi haqida
+ko‘plab yangi va qiziqarli ma’lumotlarga ega bo‘lasiz.
+Har bir bo‘limni tanlab, uning ichidagi ma’lumotlarni o‘rganing.</p>
+<p>🔬 Biologiyani birgalikda o‘rganamiz!</p>
+</div>
+
+<div class="buttons">
+<button onclick="ochish('qon')">🩸 Qon aylanish</button>
+<button onclick="ochish('yurak')">❤️ Yurak</button>
+<button onclick="ochish('tomir')">🫀 Qon tomirlari</button>
+<button onclick="ochish('kichik')">🫁 Kichik doira</button>
+<button onclick="ochish('katta')">🌍 Katta doira</button>
+<button onclick="ochish('eritro')">🔴 Eritrotsitlar</button>
+<button onclick="ochish('leyko')">⚪ Leykotsitlar</button>
+<button onclick="ochish('trombo')">🩹 Trombotsitlar</button>
+<button onclick="ochish('plazma')">💧 Qon plazmasi</button>
+<button onclick="ochish('kasallik')">⚕️ Qon kasalliklari</button>
+<button onclick="ochish('salomatlik')">💪 Sog‘lom yurak</button>
+<button onclick="ochish('fakt')">⭐ Qiziqarli faktlar</button>
+</div>
+
+<div class="content" id="malumot">
+<div class="emoji" id="rasm"></div>
+<h2 id="sarlavha"></h2>
+<div id="matn"></div>
+</div>
+
+<h2 style="text-align:center">⭐ BILASIZMI?</h2>
+
+<div class="facts">
+<div class="fact">
+<div class="emoji">❤️</div>
+<h3>Yurak</h3>
+<p>Yurak bir kunda taxminan 100 ming marta uradi.</p>
+</div>
+<div class="fact">
+<div class="emoji">🩸</div>
+<h3>Qon</h3>
+<p>Katta yoshli odamda odatda 4–6 litr qon mavjud.</p>
+</div>
+<div class="fact">
+<div class="emoji">🔴</div>
+<h3>Eritrotsit</h3>
+<p>Ularning tarkibida kislorod tashuvchi gemoglobin bor.</p>
+</div>
+<div class="fact">
+<div class="emoji">🫁</div>
+<h3>O‘pka</h3>
+<p>O‘pkada qon kislorod bilan boyiydi.</p>
+</div>
+</div>
+
+</div>
+
+<footer>
+<h2 style="color:white">❤️ SOG‘LOM YURAK — SOG‘LOM HAYOT!</h2>
+<p>Biologiya fanidan interaktiv loyiha 📚</p>
+</footer>
+
+<script>
+
+const data={
+
+qon:{
+e:"🩸",n:"QON AYLANISH TIZIMI",
+t:`
+<p>Qon aylanish tizimi inson organizmining hayotiy faoliyatini ta'minlaydigan eng muhim tizimlardan biridir. Bu tizim yurak va qon tomirlaridan tashkil topgan. Qon yurak yordamida tomirlar bo‘ylab harakatlanib, barcha a'zo va to‘qimalarga yetib boradi.</p>
+
+<h3>🧬 Qon aylanish tizimining asosiy vazifalari</h3>
+<div class="info">
+<p>🔴 Kislorodni o‘pkadan hujayralarga yetkazadi.</p>
+<p>🍎 Ovqat hazm qilish tizimidan kelgan oziq moddalarni tashiydi.</p>
+<p>🛡️ Organizmni mikroblar va infeksiyalardan himoya qilishda qatnashadi.</p>
+<p>🌡️ Tana haroratining bir xil saqlanishiga yordam beradi.</p>
+<p>♻️ Karbonat angidrid va boshqa almashinuv mahsulotlarini tashiydi.</p>
+<p>🧪 Gormonlarni kerakli a'zolarga yetkazadi.</p>
+</div>
+
+<h3>🔄 Qon qanday aylanadi?</h3>
+<p>Yurak qisqarganda qon arteriyalarga haydaladi. Arteriyalar orqali qon butun tana bo‘ylab tarqaladi. Kapillyarlarda hujayralar bilan moddalar almashinuvi sodir bo‘ladi. Keyin qon venalar orqali yana yurakka qaytadi.</p>
+
+<h3>🌍 Qon aylanish doiralari</h3>
+<p>Inson organizmida ikkita asosiy qon aylanish doirasi mavjud: katta va kichik qon aylanish doiralari. Ular bir-biri bilan uzviy bog‘langan holda ishlaydi.</p>
+
+<h3>⭐ Nima uchun qon aylanish muhim?</h3>
+<p>Agar qon aylanish to‘xtasa, hujayralarga kislorod va oziq moddalar yetib bormaydi. Shu sababli yurakning uzluksiz ishlashi inson hayoti uchun juda muhimdir.</p>`
+},
+
+yurak:{
+e:"❤️",n:"YURAK — ORGANIZMNING MOTORI",
+t:`
+<p>Yurak inson tanasidagi eng muhim mushakli a'zolardan biridir. U ko‘krak qafasida, ikki o‘pka orasida, biroz chaproqda joylashgan. Yurakning asosiy vazifasi qonni qon tomirlari orqali butun organizmga haydashdir.</p>
+
+<h3>🫀 Yurakning tuzilishi</h3>
+<p>Yurak to‘rt kameradan iborat. Uning yuqori qismida ikkita bo‘lmacha, pastki qismida esa ikkita qorincha joylashgan.</p>
+<div class="info">
+<p>1️⃣ O‘ng bo‘lmacha — tanadan kelgan qonni qabul qiladi.</p>
+<p>2️⃣ O‘ng qorincha — qonni o‘pkaga yuboradi.</p>
+<p>3️⃣ Chap bo‘lmacha — o‘pkadan kislorodga boy qon qabul qiladi.</p>
+<p>4️⃣ Chap qorincha — qonni butun organizmga haydaydi.</p>
+</div>
+
+<h3>💓 Yurak qanday ishlaydi?</h3>
+<p>Yurakning ishlashi qisqarish va bo‘shashish jarayonlariga asoslangan. Qisqarish sistola, bo‘shashish diastola deb ataladi. Ushbu jarayonlar yurak siklini tashkil qiladi.</p>
+
+<h3>🚪 Yurak klapanlari</h3>
+<p>Yurakda qonning orqaga qaytishiga to‘sqinlik qiluvchi klapanlar mavjud. Ular qonning to‘g‘ri yo‘nalishda harakatlanishini ta'minlaydi.</p>
+
+<h3>⭐ Qiziqarli ma'lumot</h3>
+<p>Yurak inson hayoti davomida tinimsiz ishlaydi. Jismoniy mashq, yugurish va hayajon vaqtida yurak urishi tezlashishi mumkin.</p>`
+},
+
+tomir:{
+e:"🫀",n:"QON TOMIRLARI",
+t:`
+<p>Qon tomirlari yurak bilan barcha a'zo va to‘qimalarni bog‘lab turadigan maxsus yo‘llardir. Ular orqali qon organizmning barcha qismlariga yetkaziladi.</p>
+
+<h3>🔴 1. Arteriyalar</h3>
+<p>Arteriyalar qonni yurakdan olib chiqadigan qon tomirlaridir. Ularning devori qalin va elastik bo‘ladi. Eng katta arteriya aorta deb ataladi. Arteriyalarning aksariyati kislorodga boy qonni tashiydi.</p>
+
+<h3>🔵 2. Venalar</h3>
+<p>Venalar qonni tana a'zolaridan yurakka olib keladi. Ularning devori arteriyalarnikiga nisbatan yupqaroq. Ko‘plab venalarda qonning orqaga oqishini cheklaydigan klapanlar mavjud.</p>
+
+<h3>🟣 3. Kapillyarlar</h3>
+<p>Kapillyarlar eng mayda qon tomirlaridir. Ularning devori juda yupqa bo‘ladi. Kislorod, oziq moddalar va almashinuv mahsulotlari aynan kapillyarlar orqali almashinadi.</p>
+
+<div class="info">
+<h3>🔬 Taqqoslash</h3>
+<p>🔴 Arteriya — qonni yurakdan olib chiqadi.</p>
+<p>🔵 Vena — qonni yurakka olib keladi.</p>
+<p>🟣 Kapillyar — moddalar almashinuvini ta'minlaydi.</p>
+</div>
+
+<h3>🌟 Muhim ma'lumot</h3>
+<p>Arteriya va vena nomlari qonning rangiga emas, uning qaysi tomonga harakatlanishiga qarab belgilanadi.</p>`
+},
+
+kichik:{
+e:"🫁",n:"KICHIK QON AYLANISH DOIRASI",
+t:`
+<p>Kichik qon aylanish doirasi o‘ng qorinchadan boshlanib, chap bo‘lmachada tugaydi. Uning asosiy vazifasi qonni o‘pkaga olib borish va kislorod bilan boyitishdir.</p>
+
+<h3>🔄 Qonning harakatlanish yo‘li</h3>
+<div class="info">
+<p>1️⃣ Qon yurakning o‘ng qorinchasidan chiqadi.</p>
+<p>2️⃣ O‘pka arteriyasi orqali o‘pkaga boradi.</p>
+<p>3️⃣ O‘pkadagi kapillyarlarda gaz almashinuvi sodir bo‘ladi.</p>
+<p>4️⃣ Qon karbonat angidridni chiqarib, kislorodni qabul qiladi.</p>
+<p>5️⃣ Kislorodga boy qon o‘pka venalari orqali chap bo‘lmachaga qaytadi.</p>
+</div>
+
+<h3>🫁 O‘pkada nima sodir bo‘ladi?</h3>
+<p>O‘pkada nafas olish jarayonida havodan kislorod qonga o‘tadi. Qondagi karbonat angidrid esa o‘pkaga o‘tib, nafas chiqarish orqali tashqariga chiqariladi.</p>
+
+<h3>🎯 Asosiy vazifasi</h3>
+<p>Kichik qon aylanish doirasi organizmni kislorod bilan ta'minlash uchun qonni gaz almashinuviga olib boradi.</p>
+
+<h3>⭐ Eslab qoling</h3>
+<p>Kichik qon aylanish doirasi o‘ng qorinchadan boshlanadi va chap bo‘lmachada tugaydi.</p>`
+},
+
+katta:{
+e:"🌍",n:"KATTA QON AYLANISH DOIRASI",
+t:`
+<p>Katta qon aylanish doirasi chap qorinchadan boshlanadi va o‘ng bo‘lmachada tugaydi. Uning asosiy vazifasi kislorod va oziq moddalarni butun organizm hujayralariga yetkazishdir.</p>
+
+<h3>🔄 Qonning harakatlanish yo‘li</h3>
+<div class="info">
+<p>1️⃣ Chap qorincha qisqarib, qonni aortaga chiqaradi.</p>
+<p>2️⃣ Aorta orqali qon yirik arteriyalarga tarqaladi.</p>
+<p>3️⃣ Arteriyalar qon olib boradigan a'zolarda kapillyarlarga bo‘linadi.</p>
+<p>4️⃣ Kapillyarlarda kislorod va oziq moddalar hujayralarga beriladi.</p>
+<p>5️⃣ Qon venalar orqali yurakka qaytadi.</p>
+<p>6️⃣ Qon yuqori va pastki kovak venalar orqali o‘ng bo‘lmachaga keladi.</p>
+</div>
+
+<h3>💪 Nima uchun kerak?</h3>
+<p>Katta qon aylanish doirasi miya, mushaklar, buyraklar, jigar va boshqa a'zolarni kislorod hamda oziq moddalar bilan ta'minlaydi.</p>
+
+<h3>⭐ Qiziqarli ma'lumot</h3>
+<p>Chap qorincha devori boshqa yurak kameralariga qaraganda qalinroq, chunki u qonni butun tana bo‘ylab haydash uchun kuchli bosim hosil qiladi.</p>`
+},
+
+eritro:{
+e:"🔴",n:"ERITROTSITLAR — QIZIL QON TANACHALARI",
+t:`
+<p>Eritrotsitlar qonning eng ko‘p uchraydigan shaklli elementlaridir. Ular qizil qon tanachalari deb ham ataladi. Eritrotsitlar tarkibida gemoglobin deb nomlangan maxsus oqsil mavjud.</p>
+
+<h3>🧬 Tuzilishi</h3>
+<p>Odam eritrotsitlari odatda ikki tomoni botiq disk shaklida bo‘ladi. Yetilgan eritrotsitlarda yadro bo‘lmaydi. Bunday shakl gaz almashinuvi uchun qulaydir.</p>
+
+<h3>🚀 Asosiy vazifalari</h3>
+<div class="info">
+<p>🔴 Kislorodni o‘pkadan to‘qimalarga yetkazadi.</p>
+<p>🔴 Karbonat angidridning bir qismini to‘qimalardan o‘pkaga tashiydi.</p>
+<p>🔴 Gemoglobin yordamida kislorodni biriktiradi.</p>
+</div>
+
+<h3>⏳ Yashash muddati</h3>
+<p>Eritrotsitlar o‘rtacha 120 kun yashaydi. Eskirgan eritrotsitlar asosan taloq va jigarda parchalanadi.</p>
+
+<h3>⭐ Qiziqarli fakt</h3>
+<p>Qonning qizil rangi eritrotsitlar tarkibidagi gemoglobin bilan bog‘liq. Gemoglobin temir saqlovchi oqsildir.</p>`
+},
+
+leyko:{
+e:"⚪",n:"LEYKOTSITLAR — ORGANIZM HIMOYACHILARI",
+t:`
+<p>Leykotsitlar oq qon hujayralari bo‘lib, inson organizmini turli kasalliklar va infeksiyalardan himoya qilishda muhim rol o‘ynaydi.</p>
+
+<h3>🛡️ Asosiy vazifalari</h3>
+<div class="info">
+<p>• Bakteriya va viruslarga qarshi kurashadi.</p>
+<p>• Begona moddalarni aniqlashda qatnashadi.</p>
+<p>• Immunitetni ta'minlashda muhim ahamiyatga ega.</p>
+<p>• Organizmga kirgan ayrim mikroorganizmlarni yo‘q qiladi.</p>
+</div>
+
+<h3>🔬 Leykotsitlarning turlari</h3>
+<p>Leykotsitlarning asosiy turlariga neytrofillar, limfotsitlar, monotsitlar, eozinofillar va bazofillar kiradi. Ularning har biri immun himoyada alohida vazifani bajaradi.</p>
+
+<h3>🧬 Qanday ishlaydi?</h3>
+<p>Organizmga zararli mikroorganizmlar kirganda immun tizimi faollashadi. Leykotsitlar ularni aniqlash, yo‘q qilish yoki ularga qarshi maxsus himoya hosil qilishda qatnashadi.</p>
+
+<h3>⭐ Qiziqarli ma'lumot</h3>
+<p>Leykotsitlar eritrotsitlardan farqli ravishda yadroga ega va ularning ayrim turlari qon tomirlaridan to‘qimalarga chiqishi mumkin.</p>`
+},
+
+trombo:{
+e:"🩹",n:"TROMBOTSITLAR — QON IVISHI",
+t:`
+<p>Trombotsitlar qonning shaklli elementlaridan biri bo‘lib, qon ketishini to‘xtatish jarayonida qatnashadi. Ular aslida yadroga ega bo‘lmagan mayda hujayra bo‘laklaridir.</p>
+
+<h3>🩹 Qon ivishi qanday sodir bo‘ladi?</h3>
+<div class="info">
+<p>1️⃣ Qon tomiri shikastlanganda trombotsitlar jarohat joyiga yopishadi.</p>
+<p>2️⃣ Ular bir-biri bilan birikib, dastlabki tiqin hosil qiladi.</p>
+<p>3️⃣ Qon ivish omillari faollashadi.</p>
+<p>4️⃣ Fibrin tolalari hosil bo‘lib, qon laxtasini mustahkamlaydi.</p>
+</div>
+
+<h3>💪 Vazifalari</h3>
+<p>• Qon ketishini kamaytirish.</p>
+<p>• Shikastlangan qon tomirni berkitishga yordam berish.</p>
+<p>• Qon ivish jarayonida qatnashish.</p>
+
+<h3>⭐ Muhim ma'lumot</h3>
+<p>Trombotsitlarning o‘rtacha yashash muddati 7–10 kun atrofida bo‘ladi.</p>`
+},
+
+plazma:{
+e:"💧",n:"QON PLAZMASI VA KIMYOVIY TARKIBI",
+t:`
+<p>Qon plazmasi qonning suyuq qismi hisoblanadi. U qon hajmining taxminan 55 foizini tashkil etadi. Plazma och sarg‘ish rangda bo‘ladi.</p>
+
+<h3>🧪 Qon plazmasining kimyoviy tarkibi</h3>
+<div class="info">
+<p>💧 90–92% — suv.</p>
+<p>🧬 7–8% — oqsillar.</p>
+<p>⚗️ 1–2% — mineral tuzlar, glyukoza, yog‘lar, gormonlar va boshqa moddalar.</p>
+</div>
+
+<h3>🧬 Plazma oqsillari</h3>
+<p>Albuminlar qonning osmotik bosimini saqlashda va moddalarni tashishda qatnashadi. Globulinlar immun himoyada muhim. Fibrinogen esa qon ivishida ishtirok etadi.</p>
+
+<h3>💧 Suvning ahamiyati</h3>
+<p>Suv turli moddalarni eritadi va ularning organizm bo‘ylab tashilishiga yordam beradi. Shuningdek, tana haroratini boshqarishda qatnashadi.</p>
+
+<h3>🎯 Plazmaning vazifalari</h3>
+<p>Oziq moddalar, gormonlar va almashinuv mahsulotlarini tashish, qon hajmini saqlash va organizm ichki muhitining barqarorligini ta'minlash.</p>`
+},
+
+kasallik:{
+e:"⚕️",n:"QON BILAN BOG‘LIQ KASALLIKLAR",
+t:`
+<p>Qon va qon aylanish tizimida turli kasalliklar uchrashi mumkin. Ular organizmning kislorod bilan ta'minlanishiga va umumiy salomatlikka ta'sir qiladi.</p>
+
+<h3>🩸 1. Kamqonlik (anemiya)</h3>
+<p>Kamqonlikda qonda gemoglobin miqdori yoki eritrotsitlar bilan bog‘liq ko‘rsatkichlar kamayadi. Natijada to‘qimalarga kislorod yetkazilishi qiyinlashishi mumkin.</p>
+
+<h3>❤️ 2. Gipertoniya</h3>
+<p>Gipertoniya — arterial qon bosimining uzoq vaqt davomida yuqori bo‘lishi. U yurak va qon tomirlariga zarar yetkazishi mumkin.</p>
+
+<h3>🧬 3. Gemofiliya</h3>
+<p>Gemofiliya — qon ivishida qatnashadigan ayrim omillar yetishmasligi bilan bog‘liq irsiy kasallik. Bunda qon ketishi uzoq davom etishi mumkin.</p>
+
+<h3>🛡️ 4. Leykemiya</h3>
+<p>Leykemiya — qon hosil qiluvchi to‘qimalarning xavfli kasalligi bo‘lib, oq qon hujayralarining rivojlanishiga ta'sir qiladi.</p>
+
+<div class="info">
+<p>⚠️ Kasalliklarni aniqlash va davolash uchun shifokor ko‘rigi hamda kerakli tahlillar muhim.</p>
+</div>`
+},
+
+salomatlik:{
+e:"💪",n:"YURAK VA QON AYLANISHINI SOG‘LOM SAQLASH",
+t:`
+<p>Yurak va qon tomirlarining sog‘lom bo‘lishi inson hayoti uchun juda muhim. Sog‘lom turmush tarzi yurak faoliyatini qo‘llab-quvvatlaydi.</p>
+
+<h3>🥗 1. To‘g‘ri ovqatlanish</h3>
+<p>Sabzavotlar, mevalar, don mahsulotlari va foydali oqsillarga boy ovqatlar iste'mol qilish kerak. Tuz va ortiqcha yog‘li mahsulotlarni cheklash foydali.</p>
+
+<h3>🏃 2. Jismoniy faollik</h3>
+<p>Yurish, yugurish, velosiped haydash va suzish kabi mashg‘ulotlar yurak faoliyatini qo‘llab-quvvatlaydi.</p>
+
+<h3>💧 3. Yetarli suv ichish</h3>
+<p>Organizm ehtiyojiga mos ravishda suv ichish muhim. Suv tanadagi normal jarayonlarda qatnashadi.</p>
+
+<h3>😴 4. Yetarlicha uxlash</h3>
+<p>Uyqu organizmning tiklanishiga yordam beradi. Muntazam uyqu tartibi sog‘lom hayotning muhim qismidir.</p>
+
+<h3>🚭 5. Zararli odatlardan uzoq bo‘lish</h3>
+<p>Chekish va boshqa zararli odatlar yurak hamda qon tomirlariga salbiy ta'sir ko‘rsatadi.</p>
+
+<h3>⭐ 6. Muntazam tekshiruv</h3>
+<p>Qon bosimini nazorat qilish va zarur tibbiy tekshiruvlardan o‘tish salomatlikni asrashga yordam beradi.</p>`
+},
+
+fakt:{
+e:"⭐",n:"QON HAQIDA 15 TA QIZIQARLI FAKT",
+t:`
+<div class="info">
+<p>❤️ 1. Yurak to‘rt kameradan tashkil topgan.</p>
+<p>🩸 2. Katta yoshli insonda odatda 4–6 litr qon bo‘ladi.</p>
+<p>🔴 3. Eritrotsitlar qonga qizil rang beradi.</p>
+<p>🛡️ 4. Leykotsitlar organizmni himoya qiladi.</p>
+<p>🩹 5. Trombotsitlar qon ivishida qatnashadi.</p>
+<p>💧 6. Plazmaning asosiy qismini suv tashkil etadi.</p>
+<p>🫁 7. O‘pkada qon kislorod bilan boyiydi.</p>
+<p>🌍 8. Insonda katta va kichik qon aylanish doiralari mavjud.</p>
+<p>🔬 9. Kapillyarlar juda ingichka qon tomirlaridir.</p>
+<p>💓 10. Yurakning chap qorinchasi devori qalinroq bo‘ladi.</p>
+<p>🧬 11. Gemoglobin tarkibida temir mavjud.</p>
+<p>🔄 12. Qon organizm bo‘ylab doimiy aylanib turadi.</p>
+<p>🩸 13. Eritrotsitlar o‘rtacha 120 kun yashaydi.</p>
+<p>🩹 14. Qon ivishida fibrin muhim rol o‘ynaydi.</p>
+<p>❤️ 15. Yurak faoliyati inson hayoti uchun zarur.</p>
+</div>`
+}
+
+};
+
+function ochish(bolim){
+let d=data[bolim];
+document.getElementById("rasm").innerHTML=d.e;
+document.getElementById("sarlavha").innerHTML=d.n;
+document.getElementById("matn").innerHTML=d.t;
+let joy=document.getElementById("malumot");
+joy.style.display="block";
+joy.scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+</script>
+</body>
+</html>
